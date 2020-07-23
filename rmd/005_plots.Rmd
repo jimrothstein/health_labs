@@ -1,44 +1,79 @@
-#005_plots.R
+
+---
+title: Template for .Rmd
+output: 
+  pdf_document:
+    latex_engine: xelatex
+    toc:  TRUE
+    toc_depth:  1
+fontsize: 12pt
+geometry: margin=0.5in,top=0.25in
+#  md_document:
+#  html_document:
+#    toc: true
+#  	toc_float: true
+#    css: styles.css
+---
 
 
-############
-# initialize
-############
-require(tidyverse)
-require(lubridate)   # ymd requires
-#################
-# Retrieve normalized, data f009 - present (local)
-#################
+005_plots.Rmd
+
+```{r setup, include=FALSE		}
+knitr::opts_chunk$set(echo = TRUE,  comment="      ##",  error=TRUE, collapse=TRUE)
+```
+
+```{r library, include=FALSE		}
+library(jimTools)
+library(here)
+library(tidyverse)
+library(lubridate)   # ymd requires
+```
+
+
+```{r render, eval=FALSE	}
+here()
+file <- "/home/jim/code/r_rafael/rmd/005_linear_algebra_examples.Rmd"
+file  <- basename(file)
+dir="rmd"
+
+jimTools::ren_pdf(file,dir)
+jimTools::ren_github(file, dir)
+```
+```{r read_data}
+
 result <- readr::read_csv("./data_norm/ALL_lab_data.csv")
 glimpse(result)
-#################
-# Begin plots
-#################
-
-#################################
-# Simple:   Fasting GLU over time
-#################################
+```
+```{r plot_GlU}
 
 z <- result %>% filter(Test_Name== "GLU")
 
 g <- ggplot(z, aes(x=Date,y=Test_Result)) +
-	geom_point() +
-    scale_x_date(date_labels = "%Y") +
-    geom_hline(yintercept = 100, color="red") +
-    labs (title = "Fasting Glucose",
+	     geom_point() +
+       scale_x_date(date_labels = "%Y") +
+       geom_hline(yintercept = 100, color="red") +
+       labs (title = "Fasting Glucose",
           subtitle = "2008 - 2018") +
-	geom_vline(data = tibble(    # adding layer!, own data
-		x= ymd(c("2012-01-01","2016-05-01"))
-		),
-		mapping = aes(xintercept = as.numeric(x)),
-		color = "blue",
-		linetype= 2)   # dotted
+	     geom_vline(data = tibble(    # adding layer!, own data
+				x= ymd(c("2012-01-01","2016-05-01"))
+				),
+				mapping = aes(xintercept = as.numeric(x)),
+				color = "blue",
+				linetype= 2)   # dotted
             
 g
 summary(g)
-###################################
-#   Stop here
-###################################
+```
+```{r knit_exit()}
+knitr::knit_exit()
+```
+
+***
+
+
+
+
+```{r next_include_plots}
 
 g <-  ggplot(result, aes(x=Date, y=Test_Result)) +
     facet_wrap(~Test_Name, nrows=5)
@@ -80,3 +115,8 @@ p <- ggplot(tmp, aes(x, y, colour=category)) +
 			   linetype=4, colour="black")
 print(p)
 # as.POSIXct(as.Date(c("2016-12-01","2017-02-01")))
+
+
+```
+
+
