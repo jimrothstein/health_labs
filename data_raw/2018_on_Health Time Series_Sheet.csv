@@ -1,0 +1,72 @@
+Date,Test_Name,Test_Result,Code,Comment,Normal
+29Jan2018,BUN,37,H,,7-25
+29Jan2018,eGFR,60,,,
+29Jan2018,GLU,101,,fasting,
+29Jan2018,Serum_Ca,9.8,,,
+29Jan2018,Serum_Cr,1.27,,,
+29Jan2018,Ur_Cr,36.6,,,
+29Jan2018,Ur_Pr/Cr,0.6,H,,<=0.19
+29Jan2018,Ur_Protein,22,H,,<=14 mg/dL
+08Mar2018,Ur_Pr/Cr,0.47,,,
+18Mar2018,BUN,37,,,
+18Mar2018,eGFR,56,,,
+18Mar2018,GLU,105,,,
+18Mar2018,Serum_Ca,9.6,,,
+18Mar2018,Serum_Cr,1.34,,,
+13Jun2018,eGFR,57,L,,>=60
+13Jun2018,Serum_Cr,1.33,H,much exercise,0.60-1.30
+13Jun2018,Ur_Cr,48.6,,,
+13Jun2018,Ur_Pr/Cr,0.37,H,,<= 0.19
+13Jun2018,Ur_Protein,18,H,,<14
+13Aug2018,eGFR,57,,,
+13Aug2018,HDL,51,,,
+13Aug2018,LDL,105,,,
+13Aug2018,Serum_Cr,1.46,,,
+13Aug2018,Serum_Cr,1.46,,,
+13Aug2018,Total_Choles,175,,,
+13Aug2018,Ur_Ca24,177,,,
+13Aug2018,Ur_Citrate24,516,,,
+13Aug2018,Ur_Na24,131,,L,
+13Aug2018,Ur_Ox24,194,,Litholink,
+13Aug2018,Ur_Uric24,0.484,,,
+13Aug2018,Ur_Vol24,5.65,,,
+31Aug2018,BUN,40,,,
+14Sep2018,Ur_Cr,21.3,,,mg/dL
+14Sep2018,Ur_Pr/Cr,0.42,H,,<= 0.19
+14Sep2018,Ur_Protein,9,,,<=14 mg/dL
+31Oct2018,BUN,25,,,
+31Oct2018,eGFR,67,,!,
+31Oct2018,GLU,104,,fasting,
+31Oct2018,Serum_Ca,9.5,,,
+31Oct2018,Serum_Cr,1.16,,!,
+31Oct2018,StoolFat,34,,High,
+31Oct2018,Ur_Na24,134,,,
+31Oct2018,Ur_Pr/Cr,0.33,,,
+31Oct2018,Ur_Protein,13,,,<14
+23Nov2018,Ur_Ca24,206,,,
+23Nov2018,Ur_Citrate24,766,,,
+23Nov2018,Ur_Ox24,77,,,
+23Nov2018,Ur_Uric24,0.319,,,
+23Nov2018,Ur_Vol24,5.44,,,
+21Jan2019,eGFR,59,L,,
+21Jan2019,Serum_Cr,1.32,H,,
+19Mar2019,BUN,31,H,,
+19Mar2019,eGFR,56,L,,
+19Mar2019,eGFR,56,L,,
+19Mar2019,GLU,95,,,
+19Mar2019,Serum_Cr,1.33,H,,
+19Mar2019,Ur_Pr/Cr,0.51,,,
+20Mar2019,Serum_Cr,1.33,,stable,
+21Mar2019,BUN,31,H,,
+23Mar2019,CBC,,,normal,
+24Mar2019,TTG IgA,,,normal,No Celiac (gluten)
+25Mar2019,GLU,95,,>10 hour fast,
+26Mar2019,Vit_D,44,,,
+27Mar2019,Pancrease_E1,29,L,very low,
+28Mar2019,Serum_Ca,9.9,,,8.4-10.2
+02Apr2019,Ur_Pr/Cr,0.49,H,,
+28May2019,BUN,36,H,,
+28May2019,eGFR,55,L,"""stable"" ?",
+28May2019,GLU,101,,,fasting >10 hrs
+28May2019,Serum_Cr,1.35,,,
+28May2019,Ur_Pr/Cr,0.52,,H,

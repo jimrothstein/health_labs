@@ -1,0 +1,52 @@
+---
+title: 
+output: md_document
+#  html_document:
+#    toc: true
+#  	toc_float: true
+#    css: styles.css
+---
+
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,  comment="      ##",  error=TRUE, collapse=TRUE)
+
+library(tidyverse)
+library(kableExtra)
+library(lobstr)
+```
+
+# Chapter 4
+::: Review basics :::
+```{r}
+parent_ls  <- function() {
+	ls (parent.frame())
+}
+
+# in R, a function's env depends where it was called
+# here: env of parent_ls() is inside function a
+a <- function(){
+	x  <- 5
+	parent_ls()
+}
+
+b   <- function() {
+	z  <- 10
+	parent_ls()
+}
+# SAME
+ls()
+parent_ls()
+parent.frame()
+
+# depends where called
+a()
+# to see contents of a
+a
+
+b()
+b
+
+rlang::env_print()
+```
+
