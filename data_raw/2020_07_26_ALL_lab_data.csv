@@ -1,0 +1,374 @@
+Date,Test_Name,Test_Result,Code,Comment,Normal,Where,Purpose,Exercise Level,Allopurinol
+11Jun2020,A1C,4.8,,,,BKK,IVP - all OK,daily,NA
+9/18/2012,A1C,4.6,,now in LAS,,Santa Cruz,,,NA
+08Apr2013,A1C,4.8,,stone-free??,,BKK,ESWL #2,,NA
+12Dec2013,A1C,5.1,,,,Santa Cruz,follow-up,,NA
+28Jul2014,A1C,5.6,,colonoscopy - late JUN,,PDX,24-hour Urine 1,,300
+12Nov2014,A1C,5,,,,PDX,follow-up,,150
+15Jul2015,A1C,5.7,,return to PDX,,PDX,follow-up,,NA
+15Feb2016,A1C,5.5,,,,PDX,24-hour,no row - 2 1/2 mo(hand),NA
+22Nov2016,A1C,5.6,,,,PDX,follow-up,low,NA
+09May2017,A1C,5.3,,,<=5.6%,,,,
+19Oct2017,A1C,5.7,H,,,,,,
+13Sep2019,A1C,5.4,,,,,,,
+01Feb2020,A1C,5.4,,,,,,,
+13Sep2019,ALT,27,,,,,,,
+01Feb2020,ALT,22,,,,,,,
+6/11/2020,BUN,27,H,,,,,,
+02Apr2009,BUN,16,,Depression,,Santa Cruz,Depression,none,NA
+02May2009,BUN,26,,"Blood in urine, 1 week",,Santa Cruz,Depression,none,NA
+08Jul2009,BUN,24,,,,Santa Cruz,Follow-up,none,NA
+18Nov2009,BUN,21,,,,Santa Cruz,Follow-up,some,NA
+19Apr2010,BUN,20,,,,Santa Cruz,Follow-up,cardio,NA
+15Jul2011,BUN,22,,,,,,,NA
+07Nov2011,BUN,22,,,,Santa Cruz,,,NA
+25Apr2012,BUN,16.8,,,,Shenzhen,,,NA
+18Sep2012,BUN,18,,now in LAS,,Santa Cruz,,,NA
+08Apr2013,BUN,19.8,,stone-free??,,BKK,ESWL #2,,NA
+12Dec2013,BUN,32,,,,Santa Cruz,follow-up,,NA
+20Dec2013,BUN,29,,walk-in clinic,,PDX,,,NA
+02Jan2014,BUN,33,,"rush, stent",,PDX,Surgery,,NA
+19Mar2014,BUN,37,,"rush, stent",,Las Vegas,Surgery,,NA
+20Mar2014,BUN,33,,,,Las Vegas,Surgery,,NA
+21Mar2014,BUN,33,,,,Las Vegas,Surgery,,NA
+02Apr2014,BUN,28,,Dr. Wagner - 1st,,PDX,follow-up,,NA
+15Feb2016,BUN,32,,,,PDX,24-hour,no row - 2 1/2 mo(hand),NA
+22Nov2016,BUN,32,,,,PDX,follow-up,low,NA
+01Jan2017,BUN,23,,,7-25 mg/dL,,,,
+16Feb2017,BUN,26,H,,7-25 mg/dL,,,,
+19Oct2017,BUN,26,H,,,,,,
+29Jan2018,BUN,37,H,,7-25,,,,
+18Mar2018,BUN,37,,,,,,,
+31Aug2018,BUN,40,,,,,,,
+31Oct2018,BUN,25,,,,,,,
+19Mar2019,BUN,31,H,,,,,,
+21Mar2019,BUN,31,H,,,,,,
+28May2019,BUN,36,H,,,,,,
+13Sep2019,BUN,36,,,,,,,
+20Sep2019,BUN,29,,,,,,,
+01Feb2020,BUN,32,,,,,,,
+07May2020,BUN,28,,,,,,,
+23Mar2019,CBC,,,normal,,,,,
+02Apr2009,eGFR,60,,Depression,,Santa Cruz,Depression,none,NA
+02May2009,eGFR,60,,"Blood in urine, 1 week",,Santa Cruz,Depression,none,NA
+08Jul2009,eGFR,60,,,,Santa Cruz,Follow-up,none,NA
+18Nov2009,eGFR,60,,,,Santa Cruz,Follow-up,some,NA
+19Apr2010,eGFR,60,,,,Santa Cruz,Follow-up,cardio,NA
+15Jul2011,eGFR,97,,,,,,,NA
+07Nov2011,eGFR,93,,,,Santa Cruz,,,NA
+18Sep2012,eGFR,99,,now in LAS,,Santa Cruz,,,NA
+08Apr2013,eGFR,67,,stone-free??,,BKK,ESWL #2,,NA
+12Dec2013,eGFR,61,,,,Santa Cruz,follow-up,,NA
+20Dec2013,eGFR,60,,walk-in clinic,,PDX,,,NA
+02Jan2014,eGFR,54,,"rush, stent",,PDX,Surgery,,NA
+21Jan2014,eGFR,59,,,,PDX,Kaiser #1,,NA
+25Feb2014,eGFR,63,,,,PDX,follow-up,,NA
+19Mar2014,eGFR,37,,"rush, stent",,Las Vegas,Surgery,,NA
+20Mar2014,eGFR,52,,,,Las Vegas,Surgery,,NA
+02Apr2014,eGFR,53,,Dr. Wagner - 1st,,PDX,follow-up,,NA
+25May2014,eGFR,64,,in EUG,,PDX,Surgery,,NA
+07May2015,eGFR,63,,,,Las Vegas,24-hour,,NA
+15Feb2016,eGFR,47,,,,PDX,24-hour,no row - 2 1/2 mo(hand),NA
+17Feb2016,eGFR,55,,,,PDX,follow-up,low,NA
+12Sep2016,eGFR,65,,,,PDX,24-hour,low,NA
+22Nov2016,eGFR,59,,,,PDX,follow-up,low,NA
+01Jan2017,eGFR,61,,,>=60,,,,
+16Feb2017,eGFR,62,,,,,,,
+19Oct2017,eGFR,62,,,,,,,
+29Jan2018,eGFR,60,,,,,,,
+18Mar2018,eGFR,56,,,,,,,
+13Jun2018,eGFR,57,L,,>=60,,,,
+13Aug2018,eGFR,57,,,,,,,
+31Oct2018,eGFR,67,,!,,,,,
+21Jan2019,eGFR,59,L,,,,,,
+19Mar2019,eGFR,56,L,,,,,,
+27May2019,eGFR,58,L,,,,,,
+28May2019,eGFR,55,L,"""stable"" ?",,,,,
+13Sep2019,eGFR,47,,,,,,,
+01Feb2020,eGFR,60,,,,,,,
+07May2020,eGFR,53,,,,,,,
+02Apr2009,GLU,100,,Depression,,Santa Cruz,Depression,none,NA
+02May2009,GLU,136,,"Blood in urine, 1 week",,Santa Cruz,Depression,none,NA
+08Jul2009,GLU,111,,,,Santa Cruz,Follow-up,none,NA
+14Aug2009,GLU,104,,,,Santa Cruz,Follow-up,some?,NA
+18Nov2009,GLU,88,,,,Santa Cruz,Follow-up,some,NA
+19Apr2010,GLU,109,,,,Santa Cruz,Follow-up,cardio,NA
+16Nov2010,GLU,92,,"Found:  Hydronephrois, 0.7 mm, ureter stone, begin ESWL",,BKK,"CT for stone, Colonoscopy",cardio,NA
+15Jul2011,GLU,106,,,,,,,NA
+26Oct2011,GLU,91,,,,,,,NA
+12Dec2011,GLU,108,,now in Berkeley#1,,Santa Cruz,,intense,NA
+11Jun2012,GLU,96,,,,BKK,IVP - all OK,daily,NA
+18Sep2012,GLU,90,,now in LAS,,Santa Cruz,,,NA
+08Apr2013,GLU,90,,stone-free??,,BKK,ESWL #2,,NA
+12Dec2013,GLU,95,,,,Santa Cruz,follow-up,,NA
+20Dec2013,GLU,110,,walk-in clinic,,PDX,,,NA
+02Jan2014,GLU,113,,"rush, stent",,PDX,Surgery,,NA
+15Aug2015,GLU,90,,,,PDX,follow-up,,NA
+15Feb2016,GLU,86,,,,PDX,24-hour,no row - 2 1/2 mo(hand),NA
+22Nov2016,GLU,99,,,,PDX,follow-up,low,NA
+01Jan2017,GLU,80,,,70-200 ,,,,
+16Feb2017,GLU,101,,,70-200,,,,
+19Oct2017,GLU,116,H,,,,,,
+29Jan2018,GLU,101,,fasting,,,,,
+18Mar2018,GLU,105,,,,,,,
+31Oct2018,GLU,104,,fasting,,,,,
+19Mar2019,GLU,95,,,,,,,
+25Mar2019,GLU,95,,>10 hour fast,,,,,
+28May2019,GLU,101,,,fasting >10 hrs,,,,
+13Sep2019,GLU,117,,,,,,,
+20Sep2019,GLU,96,,,,,,,
+07May2020,GLU,107,,,,,,,
+02Apr2009,HDL,47,,Depression,,Santa Cruz,Depression,none,NA
+01Aug2010,HDL,45,,,,Santa Cruz,Follow-up,cardio,NA
+15Jul2011,HDL,44,,,,,,,NA
+12Dec2011,HDL,39,,now in Berkeley#1,,Santa Cruz,,intense,NA
+11Jun2012,HDL,41,,,,BKK,IVP - all OK,daily,NA
+18Sep2012,HDL,66,,now in LAS,,Santa Cruz,,,NA
+08Apr2013,HDL,50,,stone-free??,,BKK,ESWL #2,,NA
+12Dec2013,HDL,51,,,,Santa Cruz,follow-up,,NA
+21Jan2014,HDL,48,,,,PDX,Kaiser #1,,NA
+28Jul2014,HDL,40,,colonoscopy - late JUN,,PDX,24-hour Urine 1,,300
+15Feb2016,HDL,62,,,,PDX,24-hour,no row - 2 1/2 mo(hand),NA
+22Nov2016,HDL,49,,,,PDX,follow-up,low,NA
+19Oct2017,HDL,51,,,,,,,
+13Aug2018,HDL,51,,,,,,,
+17Jan2020,HDL,50,,,,,,,
+02Apr2009,LDL,114,,Depression,,Santa Cruz,Depression,none,NA
+01Aug2010,LDL,89,,,,Santa Cruz,Follow-up,cardio,NA
+15Jul2011,LDL,83,,,,,,,NA
+12Dec2011,LDL,67,,now in Berkeley#1,,Santa Cruz,,intense,NA
+11Jun2012,LDL,84,,,,BKK,IVP - all OK,daily,NA
+18Sep2012,LDL,59,,now in LAS,,Santa Cruz,,,NA
+08Apr2013,LDL,64,,stone-free??,,BKK,ESWL #2,,NA
+12Dec2013,LDL,73,,,,Santa Cruz,follow-up,,NA
+21Jan2014,LDL,78,,,,PDX,Kaiser #1,,NA
+28Jul2014,LDL,83,,colonoscopy - late JUN,,PDX,24-hour Urine 1,,300
+15Feb2016,LDL,89,,,,PDX,24-hour,no row - 2 1/2 mo(hand),NA
+22Nov2016,LDL,106,,,,PDX,follow-up,low,NA
+19Oct2017,LDL,94,,,,,,,
+13Aug2018,LDL,105,,,,,,,
+17Jan2020,LDL,72,,,,,,,
+21Apr2017,Leukocytes,1+,A,,Negative,,,,
+27Mar2019,Pancrease_E1,29,L,very low,,,,,
+18Nov2009,PSA,1.3,,,,Santa Cruz,Follow-up,some,NA
+11Jun2012,PSA,1.03,,,,BKK,IVP - all OK,daily,NA
+25May2014,PSA,1.75,,in EUG,,PDX,Surgery,,NA
+09May2017,PSA,1.76,,,<=4.50,,,,
+13Sep2019,PSA,1.34,,,,,,,
+30Jun2017,PTH,80,H,,,,,,
+19Oct2017,PTH,97,H,,15-75,,,,
+02Apr2019,PTH,84,H,,,,,,
+11Jun2020,Serum_Ca,9.9,,,,,,,
+12Dec2013,Serum_Ca,9.7,,,,Santa Cruz,follow-up,,NA
+20Dec2013,Serum_Ca,9.5,,walk-in clinic,,PDX,,,NA
+02Jan2014,Serum_Ca,9.1,,"rush, stent",,PDX,Surgery,,NA
+21Jan2014,Serum_Ca,9.5,,,,PDX,Kaiser #1,,NA
+02Apr2014,Serum_Ca,9.5,,Dr. Wagner - 1st,,PDX,follow-up,,NA
+25May2014,Serum_Ca,9.6,,in EUG,,PDX,Surgery,,NA
+28Jul2014,Serum_Ca,9.5,,colonoscopy - late JUN,,PDX,24-hour Urine 1,,300
+12Nov2014,Serum_Ca,9.9,,,,PDX,follow-up,,150
+07May2015,Serum_Ca,9.3,,,,Las Vegas,24-hour,,NA
+15Feb2016,Serum_Ca,9.8,,,,PDX,24-hour,no row - 2 1/2 mo(hand),NA
+12Sep2016,Serum_Ca,9.7,,,,PDX,24-hour,low,NA
+16Feb2017,Serum_Ca,9.9,,,8.4-10.2 mg/dL,,,,
+29Jan2018,Serum_Ca,9.8,,,,,,,
+18Mar2018,Serum_Ca,9.6,,,,,,,
+31Oct2018,Serum_Ca,9.5,,,,,,,
+28Mar2019,Serum_Ca,9.9,,,8.4-10.2,,,,
+27May2019,Serum_Ca,9.4,,,,,,,
+13Sep2019,Serum_Ca,9.5,,,,,,,
+20Sep2019,Serum_Ca,9.9,,,,,,,
+01Feb2020,Serum_Ca,9.7,,,,,,,
+07May2020,Serum_Ca,10.1,,,,,,,
+01Jan2017,Serum_Cl,96,L,,97-109 mmol/L,,,,
+16Feb2017,Serum_Cl,96,L,,97-109 mmol/L,,,,
+19Oct2017,Serum_Cl,96,L,,,,,,
+11Jun2020,Serum_Cr,1.34,H,,,,,,
+02Apr2009,Serum_Cr,0.78,,Depression,,Santa Cruz,Depression,none,NA
+02May2009,Serum_Cr,0.96,,"Blood in urine, 1 week",,Santa Cruz,Depression,none,NA
+08Jul2009,Serum_Cr,0.89,,,,Santa Cruz,Follow-up,none,NA
+18Nov2009,Serum_Cr,0.85,,,,Santa Cruz,Follow-up,some,NA
+19Apr2010,Serum_Cr,0.9,,,,Santa Cruz,Follow-up,cardio,NA
+16Nov2010,Serum_Cr,1.2,,"Found:  Hydronephrois, 0.7 mm, ureter stone, begin ESWL",,BKK,"CT for stone, Colonoscopy",cardio,NA
+21Nov2010,Serum_Cr,1.1,,,,BKK,ESWL,,NA
+15Jul2011,Serum_Cr,0.87,,,,,,,NA
+07Nov2011,Serum_Cr,0.92,,,,Santa Cruz,,,NA
+25Apr2012,Serum_Cr,0.86,,,,Shenzhen,,,NA
+18Sep2012,Serum_Cr,0.82,,now in LAS,,Santa Cruz,,,NA
+08Apr2013,Serum_Cr,1.13,,stone-free??,,BKK,ESWL #2,,NA
+12Dec2013,Serum_Cr,1.3,,,,Santa Cruz,follow-up,,NA
+20Dec2013,Serum_Cr,1.09,,walk-in clinic,,PDX,,,NA
+02Jan2014,Serum_Cr,1.35,,"rush, stent",,PDX,Surgery,,NA
+21Jan2014,Serum_Cr,1.32,,,,PDX,Kaiser #1,,NA
+25Feb2014,Serum_Cr,1.25,,,,PDX,follow-up,,NA
+19Mar2014,Serum_Cr,1.9,,"rush, stent",,Las Vegas,Surgery,,NA
+20Mar2014,Serum_Cr,1.4,,,,Las Vegas,Surgery,,NA
+02Apr2014,Serum_Cr,1.45,,Dr. Wagner - 1st,,PDX,follow-up,,NA
+25May2014,Serum_Cr,1.24,,in EUG,,PDX,Surgery,,NA
+07May2015,Serum_Cr,1.25,,,,Las Vegas,24-hour,,NA
+15Feb2016,Serum_Cr,1.57,,,,PDX,24-hour,no row - 2 1/2 mo(hand),NA
+17Feb2016,Serum_Cr,1.39,,,,PDX,follow-up,low,NA
+12Sep2016,Serum_Cr,1.2,,,,PDX,24-hour,low,NA
+22Nov2016,Serum_Cr,1.31,,,,PDX,follow-up,low,NA
+01Jan2017,Serum_Cr,1.26,,,0.6-1.30 mg/dL,,,,
+16Feb2017,Serum_Cr,1.25,,,0.60-1.30 mg/dL,,,,
+19Oct2017,Serum_Cr,1.24,,,,,,,
+29Jan2018,Serum_Cr,1.27,,,,,,,
+18Mar2018,Serum_Cr,1.34,,,,,,,
+13Jun2018,Serum_Cr,1.33,H,much exercise,0.60-1.30,,,,
+13Aug2018,Serum_Cr,1.46,,,,,,,
+13Aug2018,Serum_Cr,1.46,,,,,,,
+31Oct2018,Serum_Cr,1.16,,!,,,,,
+21Jan2019,Serum_Cr,1.32,H,,,,,,
+19Mar2019,Serum_Cr,1.33,H,,,,,,
+20Mar2019,Serum_Cr,1.33,,stable,,,,,
+27May2019,Serum_Cr,1.3,,,,,,,
+28May2019,Serum_Cr,1.35,,,,,,,
+13Sep2019,Serum_Cr,1.55,,,,,,,
+20Sep2019,Serum_Cr,1.56,,,,,,,
+01Feb2020,Serum_Cr,1.26,,,,,,,
+27May2019,Serum_K,4.1,,,,,,,
+07May2020,Serum_K,4.1,,,,,,,
+11Jun2020,Serum_lipase,15,L,can do as blood test?,23-300,,,,
+27May2019,Serum_Na,140,,,,,,,
+27May2019,Serum_P,3.7,,,,,,,
+13Sep2019,Serum_Uric,7.1,,,,,,,
+31Oct2018,StoolFat,34,,High,,,,,
+02Apr2009,Tot_Cholesterol,183,,Depression,,Santa Cruz,Depression,none,NA
+01Aug2010,Tot_Cholesterol,179,,,,Santa Cruz,Follow-up,cardio,NA
+15Jul2011,Tot_Cholesterol,145,,,,,,,NA
+12Dec2011,Tot_Cholesterol,126,,now in Berkeley#1,,Santa Cruz,,intense,NA
+11Jun2012,Tot_Cholesterol,129,,,,BKK,IVP - all OK,daily,NA
+18Sep2012,Tot_Cholesterol,131,,now in LAS,,Santa Cruz,,,NA
+08Apr2013,Tot_Cholesterol,114,,stone-free??,,BKK,ESWL #2,,NA
+12Dec2013,Tot_Cholesterol,135,,,,Santa Cruz,follow-up,,NA
+21Jan2014,Tot_Cholesterol,135,,,,PDX,Kaiser #1,,NA
+28Jul2014,Tot_Cholesterol,152,,colonoscopy - late JUN,,PDX,24-hour Urine 1,,300
+15Feb2016,Tot_Cholesterol,155,,,,PDX,24-hour,no row - 2 1/2 mo(hand),NA
+22Nov2016,Tot_Cholesterol,155,,,,PDX,follow-up,low,NA
+19Oct2017,Tot_Cholesterol,159,,,,,,,
+13Aug2018,Tot_Cholesterol,175,,,,,,,
+17Jan2020,Tot_Cholesterol,150,,on relatively 'high' fat diet,,,,lower than past,
+02Apr2009,Trig,109,,Depression,,Santa Cruz,Depression,none,NA
+15Jul2011,Trig,88,,,,,,,NA
+11Jun2012,Trig,59,,,,BKK,IVP - all OK,daily,NA
+18Sep2012,Trig,30,,now in LAS,,Santa Cruz,,,NA
+08Apr2013,Trig,34,,stone-free??,,BKK,ESWL #2,,NA
+12Dec2013,Trig,56,,,,Santa Cruz,follow-up,,NA
+21Jan2014,Trig,46,,,,PDX,Kaiser #1,,NA
+28Jul2014,Trig,137,,colonoscopy - late JUN,,PDX,24-hour Urine 1,,300
+15Feb2016,Trig,94,,,,PDX,24-hour,no row - 2 1/2 mo(hand),NA
+22Nov2016,Trig,116,,,,PDX,follow-up,low,NA
+17Jan2020,Trig,142,,,,,,,
+11Jun2020,Triponni,<0.01,ng/ml,detects heart stess,<0.03,Tualatin,,,
+18Sep2012,TSH,1.82,,now in LAS,,Santa Cruz,,,NA
+12Dec2013,TSH,1.9,,,,Santa Cruz,follow-up,,NA
+24Mar2019,TTG IgA,,,normal,No Celiac (gluten),,,,
+21Apr2017,UA Hgb,1+,A,,Negative,,,,
+16Feb2017,Ur_Alb,5.3,H,,3.4-5.2 gm/dL,,,,
+28May2019,Ur_Alb,5,,,,,,,
+01Feb2020,Ur_Alb,4.9,,,,,,,
+25May2014,Ur_Ca24,146,,in EUG,,PDX,Surgery,,NA
+12Nov2014,Ur_Ca24,58,,,,PDX,follow-up,,150
+07May2015,Ur_Ca24,78,,,,Las Vegas,24-hour,,NA
+15Feb2016,Ur_Ca24,188,,,,PDX,24-hour,no row - 2 1/2 mo(hand),NA
+12Sep2016,Ur_Ca24,257,,,,PDX,24-hour,low,NA
+16Feb2017,Ur_Ca24,211,,,100-300 mg/24,,,,
+29Sep2017,Ur_Ca24,173,,,<300,,,,
+13Aug2018,Ur_Ca24,177,,,,,,,
+23Nov2018,Ur_Ca24,206,,,,,,,
+27May2019,Ur_Ca24,296,H,,,,,,
+16Feb2017,Ur_Citrate24,536,,,100-1300 mg/24,,,,
+19Oct2017,Ur_Citrate24,398,,,,,,,
+13Aug2018,Ur_Citrate24,516,,,,,,,
+23Nov2018,Ur_Citrate24,766,,,,,,,
+27May2019,Ur_Citrate24,516,,,,,,,
+17Feb2016,Ur_Cr,28.7,,,,PDX,follow-up,low,NA
+23Mar2016,Ur_Cr,29,,,,PDX,follow-up,low,NA
+12Sep2016,Ur_Cr,31.2,,,,PDX,24-hour,low,NA
+14Sep2016,Ur_Cr,50.1,,,,PDX,,,NA
+22Nov2016,Ur_Cr,25.1,,,,PDX,follow-up,low,NA
+24Jan2017,Ur_Cr,43.3,,,--,,,,
+16Feb2017,Ur_Cr,21.2,,,,,,,
+29Sep2017,Ur_Cr,46.5,,,--,,,,
+29Jan2018,Ur_Cr,36.6,,,,,,,
+13Jun2018,Ur_Cr,48.6,,,,,,,
+14Sep2018,Ur_Cr,21.3,,,mg/dL,,,,
+12Sep2016,Ur_Cr24,1.51,,,,PDX,24-hour,low,NA
+16Feb2017,Ur_Cr24,1.21,,,0.80-2.00 g/24,,,,
+16Feb2017,Ur_Na24,114,,,40-220 mmol/24,,,,
+13Aug2018,Ur_Na24,131,,L,,,,,
+31Oct2018,Ur_Na24,134,,,,,,,
+21Jan2014,Ur_Ox24,162,,,,PDX,Kaiser #1,,NA
+25Feb2014,Ur_Ox24,668,,,,PDX,follow-up,,NA
+25May2014,Ur_Ox24,55,,in EUG,,PDX,Surgery,,NA
+28Jul2014,Ur_Ox24,65,,colonoscopy - late JUN,,PDX,24-hour Urine 1,,300
+12Nov2014,Ur_Ox24,86,,,,PDX,follow-up,,150
+07May2015,Ur_Ox24,133,,,,Las Vegas,24-hour,,NA
+15Feb2016,Ur_Ox24,51,,,,PDX,24-hour,no row - 2 1/2 mo(hand),NA
+12Sep2016,Ur_Ox24,111.6,,,,PDX,24-hour,low,NA
+16Feb2017,Ur_Ox24,45.6,H,,3.6-38.0 mg/24,,,,
+29Sep2017,Ur_Ox24,48,H,,,,,,
+13Aug2018,Ur_Ox24,194,,Litholink,,,,,
+23Nov2018,Ur_Ox24,77,,,,,,,
+27May2019,Ur_Ox24,70,H,v. low ox diet,,,,,
+21Apr2017,Ur_pH,7,,,5.0-8.0,,,,
+12Dec2013,Ur_pH,6.5,,,,Santa Cruz,follow-up,,NA
+02Jan2014,Ur_pH,6,,"rush, stent",,PDX,Surgery,,NA
+15Jul2015,Ur_pH,7.01,,return to PDX,,PDX,follow-up,,NA
+29Sep2015,Ur_pH,9,,,,PDX,follow-up,,NA
+12Sep2016,Ur_pH,7,,,,PDX,24-hour,low,NA
+24Feb2014,Ur_Pr/Cr,0.23,,,,PDX,follow-up,medium,NA
+23Mar2016,Ur_Pr/Cr,0.24,,,,PDX,follow-up,low,NA
+12Sep2016,Ur_Pr/Cr,0.3,,,,PDX,24-hour,low,NA
+22Nov2016,Ur_Pr/Cr,0.48,,,,PDX,follow-up,low,NA
+24Jan2017,Ur_Pr/Cr,0.32,H,,<=0.19 ,,,,
+29Sep2017,Ur_Pr/Cr,0.58,H,,<=0.19 ,,,,
+29Jan2018,Ur_Pr/Cr,0.6,H,,<=0.19,,,,
+08Mar2018,Ur_Pr/Cr,0.47,,,,,,,
+13Jun2018,Ur_Pr/Cr,0.37,H,,<= 0.19,,,,
+14Sep2018,Ur_Pr/Cr,0.42,H,,<= 0.19,,,,
+31Oct2018,Ur_Pr/Cr,0.33,,,,,,,
+19Mar2019,Ur_Pr/Cr,0.51,,,,,,,
+02Apr2019,Ur_Pr/Cr,0.49,H,,,,,,
+28May2019,Ur_Pr/Cr,0.52,,H,,PDX,,medium,
+13Sep2019,Ur_Pr/Cr,0.34,,,,,,,
+01Feb2020,Ur_Pr/Cr,0.41,,,,,,,
+07May2020,Ur_Pr/Cr,0.35,,,,,,,
+24Jan2017,Ur_Protein,14,,,<=14 mg/dL,,,,
+29Sep2017,Ur_Protein,27,H,,<=14 mg/dL,,,,
+19Oct2017,Ur_Protein,1+,A,,,,,,
+29Jan2018,Ur_Protein,22,H,,<=14 mg/dL,,,,
+13Jun2018,Ur_Protein,18,H,,<14,,,,
+14Sep2018,Ur_Protein,9,,,<=14 mg/dL,,,,
+31Oct2018,Ur_Protein,13,,,<14,,,,
+21Jan2014,Ur_Uric24,770,,,,PDX,Kaiser #1,,NA
+24Feb2014,Ur_Uric24,660,,,,PDX,follow-up,medium,NA
+25May2014,Ur_Uric24,808,,in EUG,,PDX,Surgery,,NA
+28Jul2014,Ur_Uric24,950,,colonoscopy - late JUN,,PDX,24-hour Urine 1,,300
+12Nov2014,Ur_Uric24,234,,,,PDX,follow-up,,150
+07May2015,Ur_Uric24,259,,,,Las Vegas,24-hour,,NA
+15Feb2016,Ur_Uric24,312,,,,PDX,24-hour,no row - 2 1/2 mo(hand),NA
+14Sep2016,Ur_Uric24,422,,,,PDX,,,NA
+16Feb2017,Ur_Uric24,302,,,250-750 ng/24,,,,
+13Aug2018,Ur_Uric24,0.484,,,,,,,
+23Nov2018,Ur_Uric24,0.319,,,,,,,
+27May2019,Ur_Uric24,0.551,,,,,,,
+25Feb2014,Ur_Vol24,4.4,,,,PDX,follow-up,,NA
+25May2014,Ur_Vol24,5.1,,in EUG,,PDX,Surgery,,NA
+28Jul2014,Ur_Vol24,5,,colonoscopy - late JUN,,PDX,24-hour Urine 1,,300
+12Nov2014,Ur_Vol24,3.9,,,,PDX,follow-up,,150
+15Feb2016,Ur_Vol24,4.275,,,,PDX,24-hour,no row - 2 1/2 mo(hand),NA
+12Sep2016,Ur_Vol24,4.85,,,,PDX,24-hour,low,NA
+16Feb2017,Ur_Vol24,5700,,,,,,,
+19Oct2017,Ur_Vol24,,,,"WRONG:  Report = 4800, wrong.",,,,
+13Aug2018,Ur_Vol24,5.65,,,,,,,
+23Nov2018,Ur_Vol24,5.44,,,,,,,
+27May2019,Ur_Vol24,5.02,,,,,,,
+19Oct2017,Vit_D,46,,,,,,,
+26Mar2019,Vit_D,44,,,,,,,
+12Dec2011,VLDL,20,,now in Berkeley#1,,Santa Cruz,,intense,NA
+11Jun2012,VLDL,13,,,,BKK,IVP - all OK,daily,NA
+18Sep2012,VLDL,65,,now in LAS,,Santa Cruz,,,NA
+08Apr2013,VLDL,7,,stone-free??,,BKK,ESWL #2,,NA
+12Dec2013,VLDL,84,,,,Santa Cruz,follow-up,,NA
