@@ -29,7 +29,8 @@ type <- cols_only(Date = col_date(format="%d%b%Y"),
 						      Test_Name="c",
 						      Test_Result="n")  
 # READ
-input_data  <- "ALL_lab_data.csv"
+# input_data  <- "ALL_lab_data.csv"
+input_data  <- "2020_07_26_ALL_lab_data.csv"
 
 result_ALL<-read_csv( file= paste0("data_raw/",input_data),
         na = c("NA", "N/A"),  # these entries remain numbers
