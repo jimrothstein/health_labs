@@ -1,0 +1,45 @@
+# .gitignore
+#
+# IF file has been put into index
+# =================================
+# adding it into .gitignore later is NOT enough
+# must do:
+# git rm --cached <file>
+#
+# .R overhead (in any directory)
+# =============
+.Rproj.user
+.Rproj
+.Rhistory
+.RData
+.Ruserdata
+.Rprofile
+.Renviron
+
+#
+# ignore these directories
+# ==========================
+data_raw/
+data_intermediate/
+data_norm/
+
+
+
+# Data files, in all directories
+# ================================
+*.RDS
+*.rds
+*.Rdata
+*.csv
+*.pdf
+
+
+
+
+# Special
+# =========
+*.html
+*.tar.gz
+
+tags
+
