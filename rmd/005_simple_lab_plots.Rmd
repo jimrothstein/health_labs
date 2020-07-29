@@ -38,13 +38,11 @@ jimTools::ren_pdf(file,dir)
 jimTools::ren_github(file, dir)
 ```
 ```{r read_data}
-result <- readr::read_csv("./data_norm/ALL_lab_data.csv")
-result <- readr::read_csv(here("data_norm", "ALL_lab_data.csv"))
-glimpse(result)
+result <- readr::read_csv("./data_clean/ALL_lab_data.csv")
+result <- readr::read_csv(here("data_clean", "ALL_lab_data.csv"))
 ```
 
 ```{r plot_GlU}
-
 z <- result %>% filter(Test_Name== "GLU")
 
 g <- ggplot(z, aes(x=Date,y=Test_Result)) +
@@ -52,7 +50,7 @@ g <- ggplot(z, aes(x=Date,y=Test_Result)) +
        scale_x_date(date_labels = "%Y") +
        geom_hline(yintercept = 100, color="red") +
        labs (title = "Fasting Glucose",
-          subtitle = "2008 - 2018") +
+          subtitle = "2008 - 2020") +
 	     geom_vline(data = tibble(    # adding layer!, own data
 				x= ymd(c("2012-01-01","2016-05-01"))
 				),
@@ -66,9 +64,7 @@ summary(g)
 
 ```
 ```{r check_data}
-
-
-# summarize,  in alpha order
+# summarize,  Count for each Test (in alpha order)
 result %>% 
 	group_by(Test_Name) %>% 
 	summarize(count = n()) %>% 
@@ -77,7 +73,6 @@ result %>%
 ```
 
 ```{r plot_eGFR}
-
 g <-filter(result, Test_Name == "eGFR") %>% 
     ggplot(aes(x=Date, y=Test_Result)) +
 		geom_point()
@@ -85,7 +80,8 @@ g
 ```
 ```{r plot_urOx}
 
-g <-filter(result, Test_Name == "Ur_Ox24") %>% 
+# filter uses single & only.
+g <-filter(result, Test_Name == "Ur_Ox24" & Test_Result < 500) %>% 
     ggplot(aes(x=Date, y=Test_Result)) + geom_point() +
     		labs (title = "Ur_Ox24", subtitle = "2008 - 2020")
 
@@ -95,6 +91,7 @@ g  <- g + geom_hline(aes(yintercept=35,  color="red"))
 g 
 
 #ggsave(here("plots", "005_simple_lab_plots"), device="png")
+ggsave(here("plots", "005_simple_lab_plots_Ur_Ox24.bmp"), device="bmp")
 
 ```
 need?
