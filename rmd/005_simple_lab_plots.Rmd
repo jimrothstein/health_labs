@@ -38,6 +38,7 @@ jimTools::ren_pdf(file,dir)
 jimTools::ren_github(file, dir)
 ```
 ```{r read_data}
+# SAME	
 result <- readr::read_csv("./data_clean/ALL_lab_data.csv")
 result <- readr::read_csv(here("data_clean", "ALL_lab_data.csv"))
 ```
@@ -79,18 +80,21 @@ g <-filter(result, Test_Name == "eGFR") %>%
 g
 ```
 ```{r plot_urOx}
-
 # filter uses single & only.
+ur_ox_tibble  <- 
+	filter(result, Test_Name == "Ur_Ox24" & Test_Result < 500)
+
 g <-filter(result, Test_Name == "Ur_Ox24" & Test_Result < 500) %>% 
     ggplot(aes(x=Date, y=Test_Result)) + geom_point() +
-    		labs (title = "Ur_Ox24", subtitle = "2008 - 2020")
+    		labs (title = "Ur_Ox24", subtitle = "2008 - 2020") 
 
+g  <- g + geom_jitter()
 
 g  <- g + geom_hline(aes(yintercept=35,  color="red"))
 
 g 
 
-#ggsave(here("plots", "005_simple_lab_plots"), device="png")
+ggsave(here("plots", "005_simple_lab_plots"), device="png")
 ggsave(here("plots", "005_simple_lab_plots_Ur_Ox24.bmp"), device="bmp")
 
 ```
