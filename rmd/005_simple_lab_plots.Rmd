@@ -88,13 +88,18 @@ g <-filter(result, Test_Name == "Ur_Ox24" & Test_Result < 500) %>%
     ggplot(aes(x=Date, y=Test_Result)) + geom_point() +
     		labs (title = "Ur_Ox24", subtitle = "2008 - 2020") 
 
-g  <- g + geom_jitter()
+#g  <- g + geom_jitter()
 
 g  <- g + geom_hline(aes(yintercept=35,  color="red"))
 
 g 
 
-ggsave(here("plots", "005_simple_lab_plots"), device="png")
+ggsave(
+		"~/Downloads/print_and_delete/005_simple_lab_plots.png", device="png")
+
+ggsave(here("plots", 
+			"005_simple_lab_plots.png"), device="png")
+
 ggsave(here("plots", "005_simple_lab_plots_Ur_Ox24.bmp"), device="bmp")
 
 ```

@@ -36,8 +36,9 @@ knitr::opts_chunk$set(echo = TRUE,  comment="      ##",  error=TRUE, collapse=TR
 
 ```{r library, include=FALSE		}
 library(jimTools)
-library(here)
 library(tidyverse)
+library(dplyr)
+library(readr)
 ```
 
 
@@ -50,9 +51,7 @@ dir="rmd"
 jimTools::ren_pdf(file,dir)
 jimTools::ren_github(file, dir)
 ```
-
-
-
+function:  read_raw_data()
 ```{r read_raw}
 read_raw_data  <- function(){
 # cols_only() --  to read specified cols (omitting others)
@@ -66,7 +65,7 @@ type <- cols_only(Date = col_date(format="%d%b%Y"),
 						      Test_Result="n")  
 # READ
 # input_data  <- "ALL_lab_data.csv"
-input_data  <- "2020_07_26_ALL_lab_data.csv"
+input_data  <- "2020_08_13_ALL_lab_data.csv"
 
 result_ALL<-read_csv( file= paste0("data_raw/",input_data),
         na = c("NA", "N/A"),  # these entries remain numbers
@@ -74,8 +73,8 @@ result_ALL<-read_csv( file= paste0("data_raw/",input_data),
         col_types = type
     )   
 }
-
 ```
+function:  clean_raw_data()
 ```{r clean_data}
 
 clean_raw_data  <- function(t=NULL ){
@@ -86,6 +85,7 @@ t   <- t  %>%
 }
 
 ```
+function: write_data_clean()
 ```{r write_data_clean}
 
 write_raw_clean_data  <- function(t=NULL){
