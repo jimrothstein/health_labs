@@ -13,12 +13,14 @@ geometry: margin=0.5in,top=0.25in
 #  	toc_float: true
 #    css: styles.css
 ---
-
-
 005_plots.Rmd
 
 ```{r setup, include=FALSE		}
-knitr::opts_chunk$set(echo = TRUE,  comment="      ##",  error=TRUE, collapse=TRUE)
+knitr::opts_chunk$set(
+											echo = TRUE,  
+											comment="      ##",  
+											error=TRUE, 
+											collapse=TRUE)
 ```
 
 ```{r library, include=FALSE		}
@@ -27,25 +29,25 @@ library(here)
 library(tidyverse)
 library(lubridate)   # ymd requires
 ```
+<!-- RENDER?   SEE BOTTOM -->
 
-```{r render, eval=FALSE	}
-here()
-file <- "005_simple_lab_plots.Rmd"
-file  <- basename(file)
-dir="rmd"
-
-jimTools::ren_pdf(file,dir)
-jimTools::ren_github(file, dir)
-```
+read saved data
 ```{r read_data}
-# SAME	
-result <- readr::read_csv("./data_clean/ALL_lab_data.csv")
 result <- readr::read_csv(here("data_clean", "ALL_lab_data.csv"))
 ```
 
+before plots, check the data
+```{r check_data}
+# summarize,  Count for each Test (in alpha order)
+result %>% 
+	group_by(Test_Name) %>% 
+	summarize(count = n()) %>% 
+	arrange(Test_Name) %>% 
+	print(n=50)
+```
+plot GLU
 ```{r plot_GlU}
 z <- result %>% filter(Test_Name== "GLU")
-
 g <- ggplot(z, aes(x=Date,y=Test_Result)) +
 	     geom_point() +
        scale_x_date(date_labels = "%Y") +
@@ -61,26 +63,32 @@ g <- ggplot(z, aes(x=Date,y=Test_Result)) +
             
 g
 summary(g)
-#save 
 
 ```
-```{r check_data}
-# summarize,  Count for each Test (in alpha order)
-result %>% 
-	group_by(Test_Name) %>% 
-	summarize(count = n()) %>% 
-	arrange(Test_Name) %>% 
-	print(n=50)
-```
 
+
+plot eGFR
 ```{r plot_eGFR}
 g <-filter(result, Test_Name == "eGFR") %>% 
     ggplot(aes(x=Date, y=Test_Result)) +
 		geom_point()
 g
 ```
-```{r plot_urOx}
-# filter uses single & only.
+
+\newpage
+
+
+Data for:   UrineOxalate 24 hour 
+```{r table_urine_oxalate, echo=FALSE	}
+ur_ox_tibble  <- 
+	filter(result, Test_Name == "Ur_Ox24" )
+ur_ox_tibble
+```
+\newpage
+
+
+```{r plot_urOx, echo=FALSE		}
+# filter uses single &  ;   not &&. 
 ur_ox_tibble  <- 
 	filter(result, Test_Name == "Ur_Ox24" & Test_Result < 500)
 
@@ -94,17 +102,21 @@ g  <- g + geom_hline(aes(yintercept=35,  color="red"))
 
 g 
 
-ggsave(
-		"~/Downloads/print_and_delete/005_simple_lab_plots.png", device="png")
-
-ggsave(here("plots", 
-			"005_simple_lab_plots.png"), device="png")
-
-ggsave(here("plots", "005_simple_lab_plots_Ur_Ox24.bmp"), device="bmp")
-
+# ggsave(
+#     "~/Downloads/print_and_delete/005_simple_lab_plots.png", device="png")
+# 
+# ggsave(
+#     "~/Downloads/print_and_delete/005_simple_lab_plots.bmp", device="bmp")
+# 
+# ggsave(here("plots", 
+#       "005_simple_lab_plots.png"), device="png")
+# 
+# ggsave(here("plots", "005_simple_lab_plots_Ur_Ox24.bmp"), device="bmp")
+# 
 ```
+
+```{r eval=FALSE	, include=FALSE	}
 need?
-```{r}
 ## save, retrieve, use object - without recalculating
 
 saveRDS(g,file=here("data_intermediate/eGFR.rds"))
@@ -113,16 +125,12 @@ g
 ```
 
 
-```{r knit_exit()}
+```{r knit_exit}
 knitr::knit_exit()
 ```
 
-***
-
-
-
 need?
-```{r next_include_plots}
+```{r next_include_plots, eval=FALSE,	 include=FALSE	 }
 
 g <-  ggplot(result, aes(x=Date, y=Test_Result)) +
     facet_wrap(~Test_Name, nrows=5)
@@ -164,8 +172,14 @@ p <- ggplot(tmp, aes(x, y, colour=category)) +
 			   linetype=4, colour="black")
 print(p)
 # as.POSIXct(as.Date(c("2016-12-01","2017-02-01")))
-
-
 ```
 
+render
+```{r render, eval=FALSE	}
+file <- "005_create_plots_lab_tests.Rmd"
+file  <- basename(file)
+dir="rmd"
 
+jimTools::ren_pdf(file,dir)
+#jimTools::ren_github(file, dir)
+```
