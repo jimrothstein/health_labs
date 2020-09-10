@@ -124,6 +124,25 @@ g <- readRDS(here("data_intermediate/eGFR.rds"))
 g
 ```
 
+plot Serum_Ca
+```{r plot_serum_ca}
+z <- result %>% filter(Test_Name== "Serum_Ca")
+g <- ggplot(z, aes(x=Date,y=Test_Result)) +
+			geom_point() +
+       scale_x_date(date_labels = "%Y") +
+#      geom_hline(yintercept = 100, color="red") +
+       labs (title = "Serum_Calcium",
+          subtitle = "2008 - 2020") 
+
+
+g
+summary(g)
+
+ggsave(
+     "~/Downloads/print_and_delete/005_serum_ca.png", device="png")
+ggsave(
+     "~/Downloads/print_and_delete/005_serum_ca.bmp", device="bmp")
+```
 
 ```{r knit_exit}
 knitr::knit_exit()
