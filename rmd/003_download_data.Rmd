@@ -14,6 +14,9 @@ geometry: margin=0.5in,top=0.25in
 #    css: styles.css
 ---
 
+TODO  
+  -  3 Functions, clean up comments.
+
 Download data from google spreadsheets.
 ###########
 #	INPUT:	- Step 1, download .csv from Google.
@@ -62,8 +65,9 @@ type <- cols_only(Date = col_date(format="%d%b%Y"),
 						      Test_Name="c",
 						      Test_Result="n")  
 # READ
-# input_data  <- "ALL_lab_data.csv"
-input_data  <- "2020_08_13_ALL_lab_data.csv"
+# input_data  <- "2020_08_13_ALL_lab_data.csv"
+# input_data  <- "2020_11_23_ALL_lab_data.csv"
+input_data  <- "latest.csv"
 
 result_ALL<-read_csv( file= paste0("data_raw/",input_data),
         na = c("NA", "N/A"),  # these entries remain numbers
@@ -96,8 +100,12 @@ write_csv(t, paste0("./data_clean/", output_data ))
 ```{r do_it}
 result_ALL  <- read_raw_data()
 result_ALL  <- clean_raw_data(result_ALL)
+
 write_raw_clean_data(result_ALL)
 head(result_ALL)
+
+# filter(result_ALL, Test_Name == "Ur_Citrate24") 
+
 ```
 
 

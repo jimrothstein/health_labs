@@ -13,6 +13,10 @@ geometry: margin=0.5in,top=0.25in
 #  	toc_float: true
 #    css: styles.css
 ---
+
+<!-- Need X11
+-->
+
 005_plots.Rmd
 
 ```{r setup, include=FALSE		}
@@ -71,10 +75,38 @@ plot eGFR
 ```{r plot_eGFR}
 g <-filter(result, Test_Name == "eGFR") %>% 
     ggplot(aes(x=Date, y=Test_Result)) +
-		geom_point()
+		geom_point() +
+    labs (title = "eGFR")
 g
 ```
 
+Urine Citrate 24
+```{r plot_urine_citrate}
+
+z <-filter(result, Test_Name == "Ur_Citrate24") 
+z
+g <-filter(result, Test_Name == "Ur_Citrate24") %>% 
+    ggplot(aes(x=Date, y=Test_Result)) +
+		geom_point() +
+    labs (title = "Urine Citrate - 24")
+g
+```
+Urine pH
+```{r plot_urine_pH}
+g <-filter(result, Test_Name == "Ur_pH") %>% 
+    ggplot(aes(x=Date, y=Test_Result)) +
+		geom_point() +
+    labs (title = "Urine pH")
+g
+```
+Urine Uric Acid 24 
+```{r plot_urine_uric_acid_24}
+g <-filter(result, Test_Name == "Ur_Uric24") %>% 
+    ggplot(aes(x=Date, y=Test_Result)) +
+		geom_point() +
+    labs (title = "Urine Uric Acid 24")
+g
+```
 \newpage
 
 
