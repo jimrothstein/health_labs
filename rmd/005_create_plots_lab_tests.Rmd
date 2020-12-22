@@ -7,11 +7,6 @@ output:
     toc_depth:  1
 fontsize: 12pt
 geometry: margin=0.5in,top=0.25in
-#  md_document:
-#  html_document:
-#    toc: true
-#  	toc_float: true
-#    css: styles.css
 ---
 
 <!-- Need X11
@@ -22,9 +17,9 @@ geometry: margin=0.5in,top=0.25in
 ```{r setup, include=FALSE		}
 knitr::opts_chunk$set(
 											echo = TRUE,  
-											comment="      ##",  
-											error=TRUE, 
-											collapse=TRUE)
+											comment = "      ##",  
+											error = TRUE, 
+											collapse = TRUE)
 ```
 
 ```{r library, include=FALSE		}
@@ -82,7 +77,6 @@ g
 
 Urine Citrate 24
 ```{r plot_urine_citrate}
-
 z <-filter(result, Test_Name == "Ur_Citrate24") 
 z
 g <-filter(result, Test_Name == "Ur_Citrate24") %>% 
@@ -90,6 +84,10 @@ g <-filter(result, Test_Name == "Ur_Citrate24") %>%
 		geom_point() +
     labs (title = "Urine Citrate - 24")
 g
+# saveas latest g 
+ggsave(
+       "~/Downloads/print_and_delete/005_simple_lab_plots.png", device="png")
+
 ```
 Urine pH
 ```{r plot_urine_pH}
@@ -135,7 +133,7 @@ g  <- g + geom_hline(aes(yintercept=35,  color="red"))
 g 
 
 # ggsave(
-#     "~/Downloads/print_and_delete/005_simple_lab_plots.png", device="png")
+# "~/Downloads/print_and_delete/005_simple_lab_plots.png", device="png")
 # 
 # ggsave(
 #     "~/Downloads/print_and_delete/005_simple_lab_plots.bmp", device="bmp")
