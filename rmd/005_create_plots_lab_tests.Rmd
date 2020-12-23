@@ -88,6 +88,9 @@ g
 ggsave(
        "~/Downloads/print_and_delete/005_simple_lab_plots.png", device="png")
 
+ggsave(
+       "~/Downloads/print_and_delete/005_simple_lab_plots.pdf", device="pdf")
+
 ```
 Urine pH
 ```{r plot_urine_pH}

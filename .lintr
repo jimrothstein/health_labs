@@ -3,7 +3,7 @@ linters: with_defaults( # The following TODOs are part of an effort to have {lin
    line_length_linter = line_length_linter(120),
    cyclocomp_linter = cyclocomp_linter(30), # TODO reduce to 15
    paren_brace_linter = NULL, 
-   trailing_whitespace_linter = NULL  # annoys me
+   trailing_whitespace_linter = NULL  # annoys me  
  )
 exclusions: list(
   "inst/doc/creating_linters.R" = 1,
