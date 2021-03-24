@@ -1,0 +1,169 @@
+---
+title: "`r knitr::current_input()`"
+date: "`r paste('last updated', 
+    format(lubridate::now(), ' %d %B %Y'))`"
+output:   
+  html_document:  
+        code_folding: hide
+        toc: true 
+        toc_depth: 2
+        toc_float: true
+  pdf_document:
+    latex_engine: xelatex
+    toc:  TRUE
+    toc_depth:  1
+    extra_dependencies: ["bbm", "threeparttable"]  
+fontsize: 12pt
+geometry: margin=0.5in,top=0.25in
+---
+$$H_{2}O$$  
+
+$$Ox_{diet} = Ox_{urine} + Ox_{stool}$$
+<!-- Need X11
+-->
+
+
+```{r setup, include=FALSE		}
+knitr::opts_chunk$set(
+											echo = TRUE,  
+											comment = "      ##",  
+											error = TRUE, 
+											collapse = TRUE)
+```
+
+```{r library, include=FALSE		}
+library(here)
+library(tidyverse)
+library(lubridate)   # ymd requires
+library(ggplot2)
+library(magrittr)
+library(dplyr)
+```
+<!-- RENDER?   SEE BOTTOM -->
+
+
+##read saved data, download from google spreadsheet
+```{r read_data}
+result <- readr::read_csv(here("data_clean", "ALL_lab_data.csv"))
+```
+
+##before plots, check the data
+```{r check_data, include=FALSE}
+# summarize,  Count for each Test (in alpha order)
+{
+result %>% 
+  group_by(Test_Name) %>% 
+  summarize(count = n()) %>% 
+  arrange(Test_Name) %>% 
+  print(n=50)
+}
+
+```
+
+
+Data for:   UrineOxalate 24 hour  
+*   Mix of Litholink and Kaiser NW  labs.    
+*   The value for 2/25/2014 (668) is an error and will be removed.
+```{r table_urine_oxalate, echo=FALSE	}
+ur_ox_tibble  <- 
+  filter(result, Test_Name == "Ur_Ox24" )
+ur_ox_tibble
+```
+
+```{r, remove_bad_data}
+# filter uses single &  ;   not &&. 
+ur_ox_tibble  <- filter(result, Test_Name == "Ur_Ox24" & Test_Result < 500)
+```
+
+\newpage
+
+## UrOx vs time  (anything above red line is HIGH)
+```{r plot_urOx, echo=FALSE		}
+
+g <-filter(result, Test_Name == "Ur_Ox24" & Test_Result < 500) %>% 
+    ggplot(aes(x=Date, y=Test_Result)) + geom_point() +
+    		labs (title = "Ur_Ox24", subtitle = "2008 - 2021") 
+
+
+g  <- g + geom_hline(aes(yintercept=35,  color="red"))
+
+g 
+```
+# 
+```{r, save_plot, include=FALSE}
+
+
+ggsave(
+       "006_UrOx_report.png", device="png")
+
+# ggsave(
+# "~/Downloads/print_and_delete/005_simple_lab_plots.png", device="png")
+# 
+# ggsave(
+#     "~/Downloads/print_and_delete/005_simple_lab_plots.bmp", device="bmp")
+# 
+# ggsave(here("plots", 
+#       "005_simple_lab_plots.png"), device="png")
+# 
+# ggsave(here("plots", "005_simple_lab_plots_Ur_Ox24.bmp"), device="bmp")
+# 
+```
+
+Although this makes little sense, suppose we pretend ALL the observations were
+made under same conditions.
+
+Definitely not normal,  with long tail .
+
+```{r}
+str(result)
+m  <- mean(ur_ox_tibble$Test_Result)
+sd  <- sd(ur_ox_tibble$Test_Result)
+m
+sd
+
+hist(ur_ox_tibble$Test_Result)
+```
+
+## Boxplot
+```{r boxplot}
+
+p  <- ggplot(ur_ox_tibble, aes(x = "Without Enzymes", y=Test_Result))
+p + geom_boxplot(varwidth= FALSE) + geom_jitter(width=0.01)
+
+
+```
+
+
+
+
+
+
+```{r eval=FALSE	, include=FALSE	}
+need?
+## save, retrieve, use object - without recalculating
+
+saveRDS(g,file=here("data_intermediate/eGFR.rds"))
+g <- readRDS(here("data_intermediate/eGFR.rds"))
+g
+```
+
+
+```{r knit_exit}
+knitr::knit_exit()
+```
+
+
+
+render
+```{r render, eval=FALSE	}
+file <- "006_UrOX_report.Rmd"
+
+file  <- basename(file)
+
+dir="rmd"
+
+rmarkdown::render(file,
+                  #output_format = "pdf_document",
+                  output_format = "html_document",
+                  output_file = "~/Downloads/print_and_delete/out")
+```

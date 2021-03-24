@@ -28,18 +28,16 @@ Download data from google spreadsheets.
 #
 ###########
 
-###########
-#	read ALL on ...		
-# 	raw data from local into tibble
-###########
-
 ```{r setup, include=FALSE		}
 knitr::opts_chunk$set(echo = TRUE,  comment="      ##",  error=TRUE, collapse=TRUE)
 
-library(jimTools)
-library(tidyverse)
 library(dplyr)
 library(readr)
+library(here)
+
+
+IN  <- here("data_raw")
+OUT  <- here("data_clean")
 ```
 
 
@@ -49,62 +47,63 @@ file <- "/home/jim/code/r_rafael/rmd/005_linear_algebra_examples.Rmd"
 file  <- basename(file)
 dir="rmd"
 
-jimTools::ren_pdf(file,dir)
-jimTools::ren_github(file, dir)
 ```
-function:  read_raw_data()
+
+1.  function:  read_raw_data()
+*  data must be in data_raw/
+
 ```{r read_raw}
 read_raw_data  <- function(){
-# cols_only() --  to read specified cols (omitting others)
+    # cols_only() --  to read specified cols (omitting others)
     # IF lazy,  use col_types=cols( .default=col_guess())
     # cols(),   to read every col
     # type is list obj
 
-# parse dates 09APR2010
-type <- cols_only(Date = col_date(format="%d%b%Y"),   
-						      Test_Name="c",
-						      Test_Result="n")  
-# READ
-# input_data  <- "2020_08_13_ALL_lab_data.csv"
-# input_data  <- "2020_11_23_ALL_lab_data.csv"
-input_data  <- "latest.csv"
+    # parse dates 09APR2010
+    type <- cols_only(Date = col_date(format="%d%b%Y"),   
+                    Test_Name="c",
+                    Test_Result="n")  
+    # file 
+    input_data  <- "latest.csv"
 
-result_ALL<-read_csv( file= paste0("data_raw/",input_data),
-        na = c("NA", "N/A"),  # these entries remain numbers
-        col_names = TRUE,  # use 1st line,
-        col_types = type
-    )   
+    result_ALL<-
+      read_csv(here(IN,input_data),
+          na = c("NA", "N/A"),  # these entries remain numbers
+          col_names = TRUE,  # use 1st line,
+          col_types = type
+      )   
 }
 ```
-function:  clean_raw_data()
+2.  function:  clean_raw_data()
+
 ```{r clean_data}
 
+#  clean
 clean_raw_data  <- function(t=NULL ){
-# CLEAN
-t   <- t  %>% 
-  dplyr::select(Date,Test_Name, Test_Result) %>% 
-    dplyr::arrange(Date)
+    t   <- t  %>% 
+           dplyr::select(Date,Test_Name, Test_Result) %>% 
+           dplyr::arrange(Date)
 }
 
 ```
-function: write_data_clean()
-```{r write_data_clean}
+3.  function: write_data_clean()
+   *  data_clean/
 
+```{r write_data_clean}
 write_raw_clean_data  <- function(t=NULL){
-# WRITE
-output_data  <- "ALL_lab_data.csv"
-write_csv(t, paste0("./data_clean/", output_data ))
+  output_data  <- "ALL_lab_data.csv"
+  write_csv(t, here("data_clean", output_data ))
 }
 
 ```
 ```{r do_it}
 result_ALL  <- read_raw_data()
+
 result_ALL  <- clean_raw_data(result_ALL)
 
 write_raw_clean_data(result_ALL)
-head(result_ALL)
 
-# filter(result_ALL, Test_Name == "Ur_Citrate24") 
+head(result_ALL)
 
 ```
 
