@@ -9,18 +9,14 @@ output:
         toc_depth: 2
         toc_float: true
   pdf_document:
+#    code_folding: hide
     latex_engine: xelatex
     toc:  TRUE
-    toc_depth:  1
+    toc_depth:  3
     extra_dependencies: ["bbm", "threeparttable"]  
-fontsize: 12pt
+fontsize: 10pt
 geometry: margin=0.5in,top=0.25in
 ---
-$$H_{2}O$$  
-
-$$Ox_{diet} = Ox_{urine} + Ox_{stool}$$
-<!-- Need X11
--->
 
 
 ```{r setup, include=FALSE		}
@@ -29,26 +25,25 @@ knitr::opts_chunk$set(
 											comment = "      ##",  
 											error = TRUE, 
 											collapse = TRUE)
-```
-
-```{r library, include=FALSE		}
 library(here)
-library(tidyverse)
+library(readr)
 library(lubridate)   # ymd requires
 library(ggplot2)
 library(magrittr)
 library(dplyr)
+
+knitr::all_labels()
 ```
-<!-- RENDER?   SEE BOTTOM -->
 
 
-##read saved data, download from google spreadsheet
-```{r read_data}
+
+```{r read_data,  include=FALSE}
+## read saved data, ( downloaded, cleaned from google spreadsheet)
 result <- readr::read_csv(here("data_clean", "ALL_lab_data.csv"))
 ```
 
-##before plots, check the data
 ```{r check_data, include=FALSE}
+## before plots, check the data
 # summarize,  Count for each Test (in alpha order)
 {
 result %>% 
@@ -59,111 +54,167 @@ result %>%
 }
 
 ```
+##  Urinary Oxalate | Summary | Jim Rothstein (DOB: 12/23/55)
+
+  *  Been using Zenprep for 4 weeks. Diet also changed.   24-hour urine to be
+    sent to Litholink tomorrow.   Dr. Lieske suggested phone appointment 2
+    weeks after I send sample, so last week in April.
 
 
-Data for:   UrineOxalate 24 hour  
-*   Mix of Litholink and Kaiser NW  labs.    
-*   The value for 2/25/2014 (668) is an error and will be removed.
+### Past Data for:   Urine Oxalate 24 hour  
+
+  *  Mix of Litholink and Kaiser NW  labs.    
+  *  The value for 2/25/2014 (668) is an error and will be removed.
 ```{r table_urine_oxalate, echo=FALSE	}
+{
 ur_ox_tibble  <- 
   filter(result, Test_Name == "Ur_Ox24" )
+}
 ur_ox_tibble
 ```
 
-```{r, remove_bad_data}
+```{r, remove_bad_data, include=FALSE}
+
 # filter uses single &  ;   not &&. 
 ur_ox_tibble  <- filter(result, Test_Name == "Ur_Ox24" & Test_Result < 500)
+
 ```
 
-\newpage
 
-## UrOx vs time  (anything above red line is HIGH)
+### UrOx vs time  
+  *  Normal is < 35 mg (red line)
+  *  Beginning mid-2014, Ca supplements increased to 1000+ mg per day, esp 2018
+    on.
+
 ```{r plot_urOx, echo=FALSE		}
 
+{
 g <-filter(result, Test_Name == "Ur_Ox24" & Test_Result < 500) %>% 
     ggplot(aes(x=Date, y=Test_Result)) + geom_point() +
     		labs (title = "Ur_Ox24", subtitle = "2008 - 2021") 
+g  <- g + geom_hline(aes(yintercept=35),  color="red")
 
-
-g  <- g + geom_hline(aes(yintercept=35,  color="red"))
-
+}
 g 
 ```
-# 
+ 
 ```{r, save_plot, include=FALSE}
+# save plot
 
+name  <- paste0("006_UrOx_report.",
+                format(Sys.Date(), "%Y_%m_%d"),
+                ".png")
+# save last plot
+ggsave( here("output", name), device=png())
 
-ggsave(
-       "006_UrOx_report.png", device="png")
-
-# ggsave(
-# "~/Downloads/print_and_delete/005_simple_lab_plots.png", device="png")
-# 
-# ggsave(
-#     "~/Downloads/print_and_delete/005_simple_lab_plots.bmp", device="bmp")
-# 
-# ggsave(here("plots", 
-#       "005_simple_lab_plots.png"), device="png")
-# 
-# ggsave(here("plots", "005_simple_lab_plots_Ur_Ox24.bmp"), device="bmp")
-# 
 ```
 
-Although this makes little sense, suppose we pretend ALL the observations were
-made under same conditions.
+```{r eval=FALSE	, include=FALSE	}
+# purpose?
 
-Definitely not normal,  with long tail .
+## save graph, retrieve, AS object - without recalculating
 
-```{r}
-str(result)
+saveRDS(g,file=here("data_clean/UrOx.rds"))
+g <- readRDS(here("data_clean/UrOx.rds"))
+g
+```
+
+### Histogram:  Distribution of 24-hour Urinary Oxalate.
+  *  Suppose all observations were done under same conditions (a big leap)
+  *  Definitely not normally distributed.
+
+```{r descriptive_stats, echo=FALSE}
 m  <- mean(ur_ox_tibble$Test_Result)
 sd  <- sd(ur_ox_tibble$Test_Result)
-m
-sd
+cat("mean = ", m, "\n")
+cat("sd = ", sd, "\n")
 
-hist(ur_ox_tibble$Test_Result)
+hist(ur_ox_tibble$Test_Result, main = "UrOx",  xlab="UrOx mg/24 hours")
 ```
 
-## Boxplot
+```{r plot_base, eval=FALSE, include = FALSE}
+### Boxplot (using base)
+
+ur_ox_tibble
+ur_ox_tibble$enzyme = "pre"
+ur_ox_tibble
+boxplot(Test_Result ~ pre_enzyme, data=ur_ox_tibble, frame=FALSE)
+
+# TODO - fix
+x  <- cbind("pre_enzyme", ur_ox_tibble$Test_Result)
+points(x)
+
+```
+
+
+### Boxplot
 ```{r boxplot}
 
 p  <- ggplot(ur_ox_tibble, aes(x = "Without Enzymes", y=Test_Result))
 p + geom_boxplot(varwidth= FALSE) + geom_jitter(width=0.01)
 
-
 ```
 
+###  How I understand it.
+  *   Oxalate has no role in human health; it is not a nutrient. Once
+    consumed it must be eliminated[^1] The body's preference is via stool, ie
+    before oxalate enters the blood.   Kidneys must remove the remainder.
+
+[^1]:  I am ignoring liver production, deposits in tissue and no oxalate
+    degradation (bacteria).  I have many questions!
+
+  *  Therefore:
+
+$$ Oxalate IN     = Oxalate OUT $$
+
+  *  Specifically, 
+  
+$$Ox_{diet} = Ox_{urine} + Ox_{stool}$$
+
+  *   One solution seems clear:   consume NO oxalate!   Unfortunately, many of
+    the healthiest plants are also high in oxalate. [^2] [^3]
+
+[^2]:   Plants  use oxalate to bind excess calcium.
+
+[^3]: See, for example,  https://kidneystones.uchicago.edu/how-to-eat-a-low-oxalate-diet/
+
+  *  In healthy humans oxalate eliminated in stool by combining with calcium in
+    the digestive track before entering blood.  In my case, calcium
+    supplementation did not work.  
+
+  *   For me, the chief suspect is lack of pancreatic enzymes (plus excess
+    dietary oxalate).  Too much oxalate is reaching blood.
 
 
+### Trial using Pancrelipase (Zenprep), Lipase=25,000 USP (~ 11 per day)
 
+  *  Began 16 MARCH 2021; also changed diet.  First Litholink expected
+    mid-April.
+  *  Unlike many patients, I exhibit no obvious signs of fat malabsorption.[^4]
+    Therefore the benefit, if any, will be in reduced UrOx, separate from diet.
 
+[^4]: No malnutrition, no diarrhea 
 
-```{r eval=FALSE	, include=FALSE	}
-need?
-## save, retrieve, use object - without recalculating
+### Bottom Line:  How is "success" defined?   
 
-saveRDS(g,file=here("data_intermediate/eGFR.rds"))
-g <- readRDS(here("data_intermediate/eGFR.rds"))
-g
-```
+  *  Specifically, how will UrOx distribution change; 
+what parameters indicate "success" ?
+  *  How many data points are needed to reach conclusion?
+
 
 
 ```{r knit_exit}
 knitr::knit_exit()
 ```
 
-
-
 render
 ```{r render, eval=FALSE	}
 file <- "006_UrOX_report.Rmd"
-
-file  <- basename(file)
-
-dir="rmd"
+file  <- here("rmd", file)
+file
 
 rmarkdown::render(file,
-                  #output_format = "pdf_document",
-                  output_format = "html_document",
+                  output_format = "pdf_document",
+                  #output_format = "html_document",
                   output_file = "~/Downloads/print_and_delete/out")
 ```
