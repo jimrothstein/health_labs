@@ -9,7 +9,6 @@ output:
         toc_depth: 2
         toc_float: true
   pdf_document:
-#    code_folding: hide
     latex_engine: xelatex
     toc:  TRUE
     toc_depth:  3
@@ -18,6 +17,7 @@ fontsize: 10pt
 geometry: margin=0.5in,top=0.25in
 editor_options: 
   chunk_output_type: console
+TAGS:  fecal fat,
 ---
 
 
@@ -27,36 +27,50 @@ knitr::opts_chunk$set(
 											comment = "      ##",  
 											error = TRUE, 
 											collapse = TRUE)
-options(error = traceback)
-browser()
 library(data.table)
 library(lubridate)   # ymd requires
-
-knitr::all_labels()
 ```
 
 ####  Fecal_fatty_acids (g/24 hours)
   *  72 hour stool tests
   *  normal <7g/24 hours
   *  10/31/18 test was 72 hours, never corrected properly.
-  *  Let me get this straight,  for 1st test 34 g/day * 3 days out of total 834 
+  *  With this correction:  the first test reported fat 34 g/day and total
+    fecal weight (3 days) 834 g.
+  * This works out to 102 g fat (34 g/day * 3 days) out of 834 g, or 12.4% 
+  *  Next tests are done same way.
+  *  Result:   I see very little variation in percent fecal fat, WITH or
+    WITHOUT Zenpep.
 
 ```{r fecal_fats}
 
-fecal_fats  <- data.table(date=c("10/31/18", "4/2/19","5/24/21" ),
-                          test_length = c(48,72,72),
+fecal  <- data.table(date=c("10/31/18", "4/2/19","5/24/21" ),
+                          test_length = c(72,72,72),
                           fatty_acids = c(34.4, 44, 20),
                           total_fecal_wt = c(834, 1114, 502),
                           comments = c("72 hours don't think ever got fixed",
                                        NA, NA))
-fecal_fats
+fecal
 
-plot(fecal_fats$total_fecal_wt, fecal_fats$fatty_acids)
 
-    
+## convert date from character to numeric
+dt  <- fecal[, .( date = lubridate::mdy(date), 
+                 percent_fat = 100*(3*fatty_acids)/total_fecal_wt,
+          test_length, fatty_acids, total_fecal_wt, comments)]
+
+fecal  <- dt
+plot(x = fecal$date, y  = fecal$percent_fat ,
+     ylim=c(5.0, 20),
+     main = "Percent Fecal Fat for Each 72-hour Test",
+     col="black", 
+     type= "p")
+```
+```{r end}
+knitr::knit_exit()
 ```
 
 
+#### Review Ur Oxalate (is this old?)
 
 ```{r read_data,  include=FALSE}
 ## read saved data, ( downloaded, cleaned from google spreadsheet)
@@ -230,8 +244,9 @@ knitr::knit_exit()
 
 render
 ```{r render, eval=FALSE	}
-file <- "006_UrOX_report.Rmd"
-file  <- here("rmd", file)
+
+file <- "rmd/010_fecal_fats.Rmd"
+file  <- basename(file)
 file
 
 rmarkdown::render(file,
