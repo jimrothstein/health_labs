@@ -14,26 +14,34 @@ geometry: margin=0.5in,top=0.25in
 #    css: styles.css
 ---
 
+<!--
+
+				STOP !
+
+				This is old code.   Work on folder ../new_code/
+
+-->
+
 TODO  
-  -  3 Functions, clean up comments.
+-  3 Functions, clean up comments.
+
+
 
 Download data from google spreadsheets.
 ###########
-#	INPUT:	- Step 1, download .csv from Google.
-#         - put .csv  ./data_raw
-#         - ALL years, all lab data 
-#					- OK to overwrite data in ./data_raw, with newer.
-#
-#	OUTPUT:	
-#
-###########
+INPUT:	- Step 1, download .csv from Google.
+         - put .csv  ./data_raw
+         - ALL years, all lab data 
+					- OK to overwrite data in ./data_raw, with newer.
+
+OUTPUT:	
+
 
 ```{r setup, include=FALSE		}
 knitr::opts_chunk$set(echo = TRUE,  comment="      ##",  error=TRUE, collapse=TRUE)
 
 library(dplyr)
 library(readr)
-library(here)
 
 
 IN  <- here("data_raw")
