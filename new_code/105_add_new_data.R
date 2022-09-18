@@ -33,14 +33,15 @@ dput(dt_add)
 	IN_FILE  <- file(paste0(the_dir, "2021_03_19_FINAL_CLEAN.csv"))
 	dt  <- as.data.table(read.csv(IN_FILE))
 	dt
+	dt[, .(Test_Name)]
 }
 
 
 ####	Construct Lookup table, dt_lab and dt_lab_add (for additions)
 {
-dt_lookup  <- data.table(Test_Name=c("VLDL", "Ur_Ox"),
-											Test_Range=c("", ""),
-											Test_Comment=c("**need to addd**", "25-200")
+dt_lookup  <- data.table(Test_Name=c("VLDL", "Ur_Ox24", "eGFR"),
+											Test_Range=c("", "25-200", ""),
+											Test_Comment=c("**need to addd**", "..comment..", "")
 	)
 str(dt_lookup)
 dt_lookup
@@ -48,7 +49,7 @@ dput(dt_lookup)
 }
 
 {
-#	all rows of dt_lookup
+#	all rows of dt_lookup (appears same as inner join?)
 dt[dt_lookup, on = .(Test_Name) ]
 }
 
