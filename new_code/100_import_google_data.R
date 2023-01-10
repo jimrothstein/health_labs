@@ -27,6 +27,19 @@ geometry: margin=0.5in,top=0.25in
 -	legacy code; appears to work.
 - re-write using  dt
 
+----------------------------------------------------------------------------------
+- Mon 09Jan2023   DATA is NOT CLEAN
+- DUPLICATES
+-
+the_file  <- read.csv("~/code/health_labs/DATA/legacy/2021_03_19_FINAL_CLEAN.csv")
+long  <- data.table(the_file)
+# Find duplicates !
+long[, .N, by=c("Date", "Test_Name")][N >1]
+long[Date=="2018-08-13" & Test_Name=="Serum_Cr"]
+long[Date=="2019-05-28" & Test_Name=="Serum_Cr"]
+long[Date=="2020-05-07" & Test_Name=="Serum_Ca"]
+----------------------------------------------------------------------------------
+
 ####	Legacy
 
 #	start
