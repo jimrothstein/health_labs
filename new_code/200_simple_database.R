@@ -13,17 +13,32 @@ str(long)
 setkeyv(long, 
   cols=c("Date", "Test_Name"))
 
-
 # Find duplicates !
 long[, .N, by=c("Date", "Test_Name")][N >1]
-long[Date=="2018-08-13" & Test_Name=="Serum_Cr"]
+long[Date=="2018-08-13" & Test_Name=="Serum_Cr"] # 3 the same
 long[Date=="2019-05-28" & Test_Name=="Serum_Cr"]
 long[Date=="2020-05-07" & Test_Name=="Serum_Ca"]
+
+# find
+duplicated(long, by=1:2)
+long[duplicated(long, by=1:2)]
+
+
+# remove
+long  <- unique(long, by=1:2)
+long
+
+# check
+duplicated(long, by=1:2)
+
 
 ##  dcast to wide
 ##
 
 # Date , Test_Name should be unique
 wide = dcast(long, Date ~ Test_Name, value.var = "Test_Result")
-wide
+head(wide)
+
+
+
 unique(long$Test_Name)
