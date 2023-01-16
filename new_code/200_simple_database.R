@@ -13,11 +13,15 @@ str(long)
 setkeyv(long, 
   cols=c("Date", "Test_Name"))
 
+#   ------------------------------------------------
 # Find duplicates !
+#   These entries MUST be corrected, or removed.
+# 
+#   ------------------------------------------------
 long[, .N, by=c("Date", "Test_Name")][N >1]
 long[Date=="2018-08-13" & Test_Name=="Serum_Cr"] # 3 the same
-long[Date=="2019-05-28" & Test_Name=="Serum_Cr"]
-long[Date=="2020-05-07" & Test_Name=="Serum_Ca"]
+long[Date=="2019-05-28" & Test_Name=="Serum_Cr"] # 1.30 vs 1.35 ??
+long[Date=="2020-05-07" & Test_Name=="Serum_Ca"] # 2 different values
 
 # find
 duplicated(long, by=1:2)
