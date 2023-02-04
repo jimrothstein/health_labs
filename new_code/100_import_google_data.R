@@ -1,26 +1,10 @@
----
-title: Template for .Rmd
-output: 
-  pdf_document:
-    latex_engine: xelatex
-    toc:  TRUE
-    toc_depth:  1
-fontsize: 12pt
-geometry: margin=0.5in,top=0.25in
-#  md_document:
-#  html_document:
-#    toc: true
-#  	toc_float: true
-#    css: styles.css
----
-
 #	file <- "100_import_google_data.R		"
 #
+# ------------------------------------------------
 ####	PURPOSE:
-"One Time":  Using LEGACY CODE
--	Import final Google data (downloaded as .csv) 
--	Clean 
--	Save as R object.
+#     "One Time":  Using LEGACY CODE
+# 	  Import final Google data (downloaded as .csv) 
+# ------------------------------------------------
 
 
 #### TODO
@@ -50,7 +34,7 @@ legacy_dir  <- "/home/jim/code/health_labs/DATA/legacy"
 legacy_file  <- "2021_03_19_FINAL_LABS_from_Google_spreadsheet_FINAL.csv"
 the_file  <- normalizePath(paste0(legacy_dir, "/", legacy_file))
 
-#result
+#resulq 
 clean_file  <- "2021_03_19_FINAL_CLEAN.csv"
 clean_file <- paste0(legacy_dir, "/", clean_file)
 clean_file
