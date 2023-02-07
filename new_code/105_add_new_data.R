@@ -6,6 +6,11 @@ library(data.table)
 
 #	add like tribble (this is fake)
 dt_add  <- data.table::fread("Date, Lab_Test, Lab_Result
+9/01/22, Tot_Cholesterol, 131
+9/01/22, Trig, 73
+9/01/22, HDL, 52
+9/01/22, LDL, 64
+9/01/22, Uric_Acid (blood), 6.0 mg/dL
 9/02/22, UrOx, 100
 9/02/22, UrOx, 90
 9/03/22, UrOx, 50
@@ -50,8 +55,12 @@ dput(dt_lookup)
 
 {
 #	all rows of dt_lookup (appears same as inner join?)
-dt[dt_lookup, on = .(Test_Name) ]
+dt1  <- dt[dt_lookup, on = .(Test_Name) ]
 }
+
+dt1
+# why need?
+print(dt1)
 
 
 
