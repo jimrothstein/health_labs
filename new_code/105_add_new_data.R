@@ -6,39 +6,41 @@ library(data.table)
 
 
 #	add like tribble (this is fake)
-dt_add  <- data.table::fread("Date, Lab_Test, Lab_Result, Lab, Comment
+dt_add  <- data.table::fread("Date, Lab_Test, Lab_Result, Lab 
 9/01/22, Tot_Cholesterol, 131,
 9/01/22, Trig, 73,
-9/01/22, HDL, 52
-9/01/22, LDL, 64
+9/01/22, HDL, 52, 
+9/01/22, LDL, 64, 
 9/01/22, Serum_Uric, 6.0, Kaiser,
-9/01/22, Ur_Ca24, 217
-9/01/22, Ur_Citrate24, 749
-9/01/22, Ur_Vol24, 6.2
-9/01/22, Ur_pH, 7.7
-9/01/22, UrOx, 55
-9/01/22, Ur_Uric24, 0.422
-9/01/22, Serum_Ca, 9.4
-9/01/22, Serum_P, 3.8
-9/01/22, Serum_Cl, 99
-9/01/22, Serum_Cr, 1.22 
-9/01/22, Serum_Uric, 6.1, Litholink
-9/01/22, eGFR, 65 
-5/12/22, Ur_Pr/Cr, 0.91
-5/12/22, TSH, 1.35
-5/12/22, PTH, 99
-5/12/22,  A1C, 5.5
-5/12/22,  GLU, 102
+9/01/22, Ur_Ca24, 217,  
+9/01/22, Ur_Citrate24, 749, 
+9/01/22, Ur_Vol24, 6.2, 
+9/01/22, Ur_pH, 7.7,  
+9/01/22, UrOx, 55,  
+9/01/22, Ur_Uric24, 0.422,  
+9/01/22, Serum_Ca, 9.4, 
+9/01/22, Serum_P, 3.8,  
+9/01/22, Serum_Cl, 99,  
+9/01/22, Serum_Cr, 1.22,   
+9/01/22, Serum_Uric, 6.1, Litholink,  
+9/01/22, eGFR, 65,   
+5/12/22, Ur_Pr/Cr, 0.91,  
+5/12/22, TSH, 1.35, 
+5/12/22, PTH, 99, 
+5/12/22,  A1C, 5.5, 
+5/12/22,  GLU, 102, 
 5/12/22,  Serum_Cr, 1.12, Kaiser,
 5/12/22,  BUN, 26, Kaiser,
-5/12/22,  eGFR, 72, Kaiser, !
-5/12/22,  
-5/12/22,  
-5/12/22,  
-", fill=T)
+5/12/22,  eGFR, 72, Kaiser, 
+5/12/22,  UrOx, 45, Litholink , 
+1/19/23, UrOx, 66, Litholink, 
+10/21/21, UrOx, 85, Litholink,
+", sep=",", fill=T )
 
+dt_add
 
-dt_add[, .(Date=sort(as.Date(Date)), format(Lab_Test, justify="left"), Lab_Result, Lab, Comment)]
+# Date is read in as "character"
+dt_add[, .(Date = sort(as.Date(Date, format="%m/%d/%y")), Lab_Test=format(Lab_Test, justify="left"), Lab_Result, Lab )]
 
 # -------------------------------------  TODO:  format Lab_Test, left align-----------------------------
 format_col.complex = function(x, ...) sprintf('(%.1f, %.1fi)', Re(x), Im(x))
@@ -110,3 +112,4 @@ print(dt1)
 
 
 }
+vim: timeoutlen=500 
