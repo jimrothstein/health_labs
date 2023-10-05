@@ -1,0 +1,8 @@
+#### import data for foods, calcium, protein
+(originally created in Google spreadsheet)
+```{r}
+library(data.table)
+dairy  <- fread("../data/Calcium_Dairy.csv")
+head(dairy)
+```
+
