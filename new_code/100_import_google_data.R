@@ -11,6 +11,52 @@
 -	legacy code; appears to work.
 - re-write using  dt
 
+
+library(tidyverse)
+library(data.table)
+# -------------------------------------
+the_dir <- "~/code/health_labs/DATA/"
+the_file <- "2021_03_19_raw_data_from_google.csv"
+the_path  <- glue::glue(the_dir, the_file)
+# -------------------------------------
+
+
+import_data  <- function(the_path=NULL){
+    read.csv(the_path)
+}
+
+the_data  <- import_data(the_path)
+str(the_data)
+# 'data.frame':	404 obs. of  10 variables:
+#  $ Date          : chr  "12Dec2011" "11Jun2012" "18Sep2012" "08Apr2013" ...
+#  $ Test_Name     : chr  "VLDL" "VLDL" "VLDL" "VLDL" ...
+#  $ Test_Result   : chr  "20" "13" "65" "7" ...
+#  $ Code          : chr  "" "" "" "" ...
+#  $ Comment       : chr  "now in Berkeley#1" "" "now in LAS" "stone-free??" ...
+#  $ Normal        : chr  "" "" "" "" ...
+#  $ Where         : chr  "Santa Cruz" "BKK" "Santa Cruz" "BKK" ...
+#  $ Purpose       : chr  "" "IVP - all OK" "" "ESWL #2" ...
+#  $ Exercise.Level: chr  "intense" "daily" "" "" ...
+#  $ Allopurinol   : int  NA NA NA NA NA NA NA NA NA 300 ...
+# NULL
+# ----------------------------------
+#   Check for Duplicates
+the_data %>% count(Date, Test_Name, sort=T) |> head()
+#        Date       Test_Name n
+# 1 13Aug2018        Serum_Cr 3
+# 2 07May2020        Serum_Ca 2
+# 3 28May2019        Serum_Cr 2
+# 4 01Aug2010             HDL 1
+# 5 01Aug2010             LDL 1
+# 6 01Aug2010 Tot_Cholesterol 1
+
+
+the_data %>% filter(Date == "2018-08-13")
+the_data %>% filter(.by=(Date,Test_Name)
+the_data  %>% ungroup() %>% select(Date = "12Aug2018", Test_Name == "Serum_Cr")
+
+the_data
+
 ----------------------------------------------------------------------------------
 - Mon 09Jan2023   DATA is NOT CLEAN
 - DUPLICATES
@@ -23,6 +69,8 @@ long[Date=="2018-08-13" & Test_Name=="Serum_Cr"]
 long[Date=="2019-05-28" & Test_Name=="Serum_Cr"]
 long[Date=="2020-05-07" & Test_Name=="Serum_Ca"]
 ----------------------------------------------------------------------------------
+
+
 
 ####	Legacy
 
