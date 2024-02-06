@@ -8,12 +8,13 @@
 
 
 #### TODO
--	legacy code; appears to work.
-- re-write using  dt
+-   legacy code; appears to work.
+-   re-write using  dt
 
 
 library(tidyverse)
 library(data.table)
+library(lubridate)
 # -------------------------------------
 the_dir <- "~/code/health_labs/DATA/"
 the_file <- "2021_03_19_raw_data_from_google.csv"
@@ -25,8 +26,15 @@ import_data  <- function(the_path=NULL){
     read.csv(the_path)
 }
 
-the_data  <- import_data(the_path)
-str(the_data)
+the_data  <- tibble::as_tibble(import_data(the_path))
+
+##  As stored, Date is character in form d m y
+lubridate::dmy(the_data$Date)
+
+z1  <- the_data |> mutate(Date=lubridate::dmy(Date))
+head(z1)
+the_data  <- z1
+head(the_data)
 # 'data.frame':	404 obs. of  10 variables:
 #  $ Date          : chr  "12Dec2011" "11Jun2012" "18Sep2012" "08Apr2013" ...
 #  $ Test_Name     : chr  "VLDL" "VLDL" "VLDL" "VLDL" ...
@@ -42,20 +50,26 @@ str(the_data)
 # ----------------------------------
 #   Check for Duplicates
 the_data %>% count(Date, Test_Name, sort=T) |> head()
-#        Date       Test_Name n
-# 1 13Aug2018        Serum_Cr 3
-# 2 07May2020        Serum_Ca 2
-# 3 28May2019        Serum_Cr 2
-# 4 01Aug2010             HDL 1
-# 5 01Aug2010             LDL 1
-# 6 01Aug2010 Tot_Cholesterol 1
+#         Date Test_Name n
+# 1 2018-08-13  Serum_Cr 3
+# 2 2019-05-28  Serum_Cr 2
+# 3 2020-05-07  Serum_Ca 2
+# 4 2009-04-02       BUN 1
+# 5 2009-04-02       GLU 1
+# 6 2009-04-02       HDL 1
+
+glimpse(the_data)
+##  Examine Duplicates
+the_data |> dplyr::filter(Date == dmy("13Aug2018") & Test_Name=="Serum_Cr")
+
+the_data |> dplyr::filter(Test_Name=="A1C")
+## Broken ....
+the_data %>% dplyr::filter(.by=(Date,Test_Name)
+the_data  %>% ungroup() %>% dplyr::select(Date = "12Aug2018", Test_Name == "Serum_Cr")
 
 
-the_data %>% filter(Date == "2018-08-13")
-the_data %>% filter(.by=(Date,Test_Name)
-the_data  %>% ungroup() %>% select(Date = "12Aug2018", Test_Name == "Serum_Cr")
-
-the_data
+z  <- the_data |> dplyr::select(c(Date, Test_Name, Test_Result)) |> dplyr::filter(Test_Name == "A1C") 
+z |> ggplot2::ggplot(aes(Date, Test_Result)) + geom_point()  
 
 ----------------------------------------------------------------------------------
 - Mon 09Jan2023   DATA is NOT CLEAN
