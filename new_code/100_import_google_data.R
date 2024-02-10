@@ -8,6 +8,7 @@
 
 
 #### TODO
+-   A1C, 2020-06-11 is WRONG; perhaps date should be date of IVP (2012-06-11), BKK (A1C=4.8) 
 -   legacy code; appears to work.
 -   re-write using  dt
 
@@ -63,6 +64,7 @@ glimpse(the_data)
 the_data |> dplyr::filter(Date == dmy("13Aug2018") & Test_Name=="Serum_Cr")
 
 the_data |> dplyr::filter(Test_Name=="A1C")
+the_data |> dplyr::filter(Where=="BKK")
 ## Broken ....
 the_data %>% dplyr::filter(.by=(Date,Test_Name)
 the_data  %>% ungroup() %>% dplyr::select(Date = "12Aug2018", Test_Name == "Serum_Cr")
