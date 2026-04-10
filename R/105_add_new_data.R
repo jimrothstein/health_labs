@@ -119,10 +119,3 @@ print(dt1)
   #
   dt[dt_lookup, on = .(Test_Name = Test_Name), .(Date, Test_Name, Test_Result, Test_Range, Test_Comment)]
 }
-
-
-
-
-
-
-vim:timeoutlen <- 500
