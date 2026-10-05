@@ -5,7 +5,7 @@ library(googlesheets4)
 
 # Spreadsheet ID and the single tab we care about
 SS_ID  <- "16PRB17uBRtferrNyVSPKHCyelTNW4I6m2bMaTcsgo7s"
-SS_TAB <- "ALL - LABS"
+SS_TAB <- "LABS - ALL"
 
 # Auth: opens a browser once, then reuses the cached token
 gs4_auth()
