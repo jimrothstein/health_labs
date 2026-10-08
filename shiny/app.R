@@ -57,6 +57,7 @@ server <- function(input, output) {
     tagList(h4("New row"), lab_inputs())
   })
 
+# runs only when "submit" is pressed; and not during inital startup
   observeEvent(input$submit, {
 
     vals <- lapply(seq_along(LAB_FIELDS), function(i) input[[field_id(i)]])
